@@ -1,6 +1,6 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
+  StatusBar,
   StyleSheet,
   Text,
   View,
@@ -10,37 +10,28 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   TouchableNativeFeedback,
+  Platform,
+  Dimensions,
 } from 'react-native';
 
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from '@react-native-community/hooks';
+
 export default function App() {
+  const { landscape } = useDeviceOrientation();
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Hello World</Text>
-      <TouchableNativeFeedback onPress={() => console.log('Image touched.')}>
-        <View
-          style={{ width: 200, height: 70, backgroundColor: 'dodgerblue' }}
-        ></View>
-      </TouchableNativeFeedback>
-      <TouchableHighlight onPress={() => console.log('Image touched.')}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableHighlight>
-      <TouchableOpacity onPress={() => console.log('Image touched.')}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableOpacity>
+      <View
+        style={{
+          backgroundColor: 'teal',
+          width: '100%',
+          height: landscape ? '100%' : '30%',
+        }}
+      >
+        <Text>hello world</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -49,7 +40,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
 });
