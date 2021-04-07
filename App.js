@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
   StyleSheet,
@@ -10,38 +9,31 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   TouchableNativeFeedback,
+  StatusBar,
 } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello World</Text>
-      <TouchableNativeFeedback onPress={() => console.log('Image touched.')}>
-        <View
-          style={{ width: 200, height: 70, backgroundColor: 'dodgerblue' }}
-        ></View>
-      </TouchableNativeFeedback>
-      <TouchableHighlight onPress={() => console.log('Image touched.')}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableHighlight>
-      <TouchableOpacity onPress={() => console.log('Image touched.')}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableOpacity>
-    </SafeAreaView>
+    <View
+      style={{
+        backgroundColor: 'black',
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: StatusBar.currentHeight,
+      }}
+    >
+      <View
+        style={{
+          backgroundColor: 'teal',
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View style={{ backgroundColor: 'gray', width: 100, height: 100 }} />
+      <View style={{ backgroundColor: 'tomato', width: 100, height: 100 }} />
+    </View>
   );
 }
 
