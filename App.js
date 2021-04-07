@@ -27,8 +27,9 @@ export default function App() {
       <View
         style={{
           backgroundColor: 'teal',
-          flexBasis: 100, // set width or height based on main axis
-          flexGrow: 1,
+          width: 400,
+          // flexShrink: 1, // shrink this item so that other items may fit in the layout
+          flex: -1, // negative -> flex shrink positive -> flex grow
           height: 100,
         }}
       />
