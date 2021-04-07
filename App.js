@@ -27,10 +27,11 @@ export default function App() {
       <View
         style={{
           backgroundColor: 'teal',
-          width: 400,
-          // flexShrink: 1, // shrink this item so that other items may fit in the layout
-          flex: -1, // negative -> flex shrink positive -> flex grow
+          width: 100,
           height: 100,
+          position: 'absolute',
+          top: 0,
+          left: 0,
         }}
       />
       <View style={{ backgroundColor: 'gray', width: 100, height: 100 }} />
