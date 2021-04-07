@@ -1,55 +1,54 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
-  Text,
-  View,
   SafeAreaView,
-  Image,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
+  Button,
+  Alert,
+  Platform,
+  StatusBar,
+  bar,
 } from 'react-native';
 
 export default function App() {
+  const [bgColor, setBgColor] = useState('white');
+  const handleThemeChange = (theme) => {
+    StatusBar.setBarStyle(theme === 'light' ? 'dark-content' : 'light-content');
+    setBgColor(theme === 'light' ? 'white' : 'black');
+  };
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: bgColor,
+      paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  });
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Hello World</Text>
-      <TouchableNativeFeedback onPress={() => console.log('Image touched.')}>
-        <View
-          style={{ width: 200, height: 70, backgroundColor: 'dodgerblue' }}
-        ></View>
-      </TouchableNativeFeedback>
-      <TouchableHighlight onPress={() => console.log('Image touched.')}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableHighlight>
-      <TouchableOpacity onPress={() => console.log('Image touched.')}>
-        <Image
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableOpacity>
+      <Button
+        color="orange"
+        title="Switch Theme"
+        onPress={() =>
+          Alert.alert('Change Theme', 'Please choose your theme.', [
+            { text: 'Dark', onPress: () => handleThemeChange('dark') },
+            { text: 'Light', onPress: () => handleThemeChange('light') },
+          ])
+        }
+      />
+
+      {/* Only works in iOS */}
+      {/* <Button
+        color="orange"
+        title="Click Me"
+        onPress={() =>
+          Alert.prompt('Custom Title', 'Custom Message', (text) =>
+            console.log(text)
+          )
+        }
+      /> */}
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
