@@ -1,0 +1,56 @@
+import React from 'react';
+import { FlatList, StyleSheet } from 'react-native';
+import Screen from './Screen';
+import Card from './Card';
+import colors from '../config/colors';
+
+const listings = [
+  {
+    id: Math.random(),
+    title: 'Red jacket for sale',
+    price: 100,
+    image: require('../assets/jacket.jpg'),
+  },
+  {
+    id: Math.random(),
+    title: 'Couch in great condition',
+    price: 1000,
+    image: require('../assets/couch.jpg'),
+  },
+  {
+    id: Math.random(),
+    title: 'Couch in great condition',
+    price: 1000,
+    image: require('../assets/couch.jpg'),
+  },
+];
+
+function ListingsScreen(props) {
+  return (
+    <Screen style={styles.screen}>
+      <FlatList
+        data={listings}
+        keyExtractor={(listing) => listing.id.toString()}
+        renderItem={({ item }) => (
+          <Card
+            style={styles.card}
+            title={item.title}
+            subTitle={`$ ${item.price}`}
+            image={item.image}
+          />
+        )}
+      />
+    </Screen>
+  );
+}
+
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: colors.light,
+  },
+  card: {
+    marginHorizontal: 15,
+  },
+});
+
+export default ListingsScreen;

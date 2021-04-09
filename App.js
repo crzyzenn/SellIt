@@ -1,22 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-import AppText from './app/components/AppText';
-import ViewImageScreen from './app/screens/ViewImageScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import AppButton from './app/components/AppButton';
-import Card from './app/components/Card';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
-import MessagesScreen from './app/screens/MessagesScreen';
+import Icon from './app/components/Icon';
+import Screen from './app/components/Screen';
+import ListItem from './app/components/ListItem';
+import AccountScreen from './app/components/AccountScreen';
+import ListingsScreen from './app/components/ListingsScreen';
 
 export default function App() {
-  return <MessagesScreen />;
+  return <ListingsScreen />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-});
