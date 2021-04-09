@@ -4,11 +4,11 @@ import {
   FlatList,
   Modal,
   StyleSheet,
-  TextInput,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import defaultStyles from '../config/styles';
 import AppText from './AppText';
 import Screen from './Screen';
@@ -18,7 +18,7 @@ const { colors } = defaultStyles;
 
 function AppPicker({ icon, items, placeholder, onSelectItem, selectedItem }) {
   const [modalVisible, setModalVisible] = useState(false);
-
+  console.log(items);
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
@@ -31,9 +31,11 @@ function AppPicker({ icon, items, placeholder, onSelectItem, selectedItem }) {
               name={icon}
             />
           )}
-          <AppText style={styles.text}>
-            {selectedItem ? selectedItem.label : placeholder}
-          </AppText>
+          {selectedItem ? (
+            <AppText style={styles.text}>{selectedItem.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
           <MaterialCommunityIcons
             style={styles.icon}
             size={20}
@@ -75,6 +77,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
+    flex: 1,
+  },
+  placeholder: {
+    color: colors.medium,
     flex: 1,
   },
   textInput: defaultStyles.text,
