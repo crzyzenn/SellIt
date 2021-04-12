@@ -26,12 +26,6 @@ const initialMessages = [
     image: require('../assets/zen.jpeg'),
   },
   {
-    id: 4,
-    title: 'T2',
-    description: 'D2',
-    image: require('../assets/zen.jpeg'),
-  },
-  {
     id: 5,
     title: 'T2',
     description: 'D2',
