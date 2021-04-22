@@ -1743,7 +1743,7 @@
 
 "@react-navigation/bottom-tabs@^5.11.9":
   version "5.11.9"
-  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.11.9.tgz"
+  resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.11.9.tgz#380a97593290a8e278365c5e4d84813e19c8a9c9"
   integrity sha512-RuSlULJrEiSCDLTi3OfmXqfmBm+Y0G4JnGiCUguMDet+x5AXdYhrsLdxJVyBsnoQz3lvlz9pWIcQ8p/hPiv2CA==
   dependencies:
     color "^3.1.3"
@@ -1770,7 +1770,7 @@
 
 "@react-navigation/native@^5.9.4":
   version "5.9.4"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.9.4.tgz"
+  resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.9.4.tgz#414c044423c58aa1cdde1b6494309e0b51da08b8"
   integrity sha512-BUCrOXfZDdKWBqM8OhOKQhCX5we4HUo5XG6tCQtVqQAep+7UcApZmMUuemUXDxVe8NPESUpoUlB0RaEpyIdfTQ==
   dependencies:
     "@react-navigation/core" "^5.15.3"
@@ -1786,7 +1786,7 @@
 
 "@react-navigation/stack@^5.14.4":
   version "5.14.4"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.4.tgz"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.4.tgz#32f6717c03494f0ca6cf0dd43d8302af824de9e9"
   integrity sha512-gQjWK8JHtVkD1p7wzjtSPuScJI0mSAk/N/gzgjQZo+rDUwgM8rOTDcVNRbtEOqCEgLQcZrZQHwhOjkrJirehjQ==
   dependencies:
     color "^3.1.3"
